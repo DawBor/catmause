@@ -3,6 +3,7 @@ let wynik = 0
 let speed = 0
 let licznik = 0
 let ghost: game.LedSprite = null
+basic.showString("CAT & MOUSE")
 basic.showNumber(3)
 basic.showNumber(2)
 basic.showNumber(1)
