@@ -46,13 +46,17 @@ basic.forever(function () {
     pacman = game.createSprite(2, 2)
     while (true) {
         basic.pause(100)
-        if (input.rotation(Rotation.Pitch) < -5) {
+        if (input.acceleration(Dimension.Y) < -200) {
+            music.play(music.createSoundExpression(WaveShape.Noise, 500, 1, 255, 0, 10, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.InBackground)
             pacman.change(LedSpriteProperty.Y, -1)
-        } else if (input.rotation(Rotation.Pitch) > 5) {
+        } else if (input.acceleration(Dimension.Y) > 200) {
+            music.play(music.createSoundExpression(WaveShape.Noise, 500, 1, 255, 0, 10, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.InBackground)
             pacman.change(LedSpriteProperty.Y, 1)
-        } else if (input.rotation(Rotation.Roll) < -5) {
+        } else if (input.acceleration(Dimension.X) < -200) {
+            music.play(music.createSoundExpression(WaveShape.Noise, 500, 1, 255, 0, 10, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.InBackground)
             pacman.change(LedSpriteProperty.X, -1)
-        } else if (input.rotation(Rotation.Roll) > 5) {
+        } else if (input.acceleration(Dimension.X) > 200) {
+            music.play(music.createSoundExpression(WaveShape.Noise, 500, 1, 255, 0, 10, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.InBackground)
             pacman.change(LedSpriteProperty.X, 1)
         }
     }
